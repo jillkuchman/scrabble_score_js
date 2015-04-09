@@ -26,4 +26,17 @@ describe('scrabbleScore', function() {
     it("will return 2 if the user inputs so", function() {
         expect(scrabbleScore("so")).to.equal(2);
     });
+
+    it("will return the score of a user input of multiple letter values", function(){
+        expect(scrabbleScore("epicodus")).to.equal(13);
+    });
+    it("will return 1 if the user inputs a one-letter input of any of the letters worth 1 point, disregarding capitalization", function() {
+        expect(scrabbleScore("EB")).to.equal(4);
+    });
+    it("will return points for letters only and disregard spaces", function() {
+        expect(scrabbleScore("Conor Jill")).to.equal(18);
+    });
+    it("will disregard special characters and only count letters", function() {
+        expect(scrabbleScore("Conor1      Jill!")).to.equal(18);
+    });
 });
