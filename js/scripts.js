@@ -13,3 +13,17 @@ function scrabbleScore(input) {
 
     return counter;
 };
+
+$(document).ready(function() {
+    $("form#scrabble").submit(function(event){
+        var input = $("input#user_input").val();
+        console.log("input: " + input);
+        var score = scrabbleScore(input);
+
+        $("#result").show();
+        $(".input_word").text(input);
+        $(".score").text(score);
+
+        event.preventDefault();
+    });
+});
