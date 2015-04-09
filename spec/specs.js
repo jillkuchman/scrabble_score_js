@@ -8,4 +8,7 @@ describe('scrabbleScore', function() {
     it("will return 2 if the user inputs a one-letter input of any of the letters worth 2 points", function() {
         expect(scrabbleScore("d")).to.equal(2);
     });
+    it("will return 3 if the user inputs a one-letter input of any of the letters worth 3 points", function() {
+        expect(scrabbleScore("b")).to.equal(3);
+    });
 });
